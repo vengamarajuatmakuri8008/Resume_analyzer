@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Resume Analysis Results</h1>
+
+    <h2>TF-IDF Match Score: {{ score }}%</h2>
+
+    <h2>Skill Coverage: {{ coverage }}%</h2>
+
+    <h3>Matched Skills</h3>
+
+    <ul>
+        {% for skill in matched %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Missing Skills</h3>
+
+    <ul>
+        {% for skill in missing %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Analyze Another Resume</a>
+
+</div>
+
+</body>
+</html>
